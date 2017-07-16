@@ -1,17 +1,5 @@
-
 <h1 style="text-align: center;">
   {{title | uppercase}}
 </h1>
-<section style="width: 1600px; margin: 0 auto;">
-<div class="panel panel-default" style="width: 300px; float: left; margin: 20px 10px;" *ngFor="let product of products">
-  <h2 class="panel-heading" style="margin-top: 0; color: teal;">{{ product.name | uppercase }}</h2>
-  <div class="panel-body" style="padding: 0;">
-    <p  style="clear: both; content: ' '; padding: 10px; line-height: 3px">
-      <span style="float: left; font-size: 1.2em;">{{ product.price | currency }}</span>
-      <span style="float: right; font-size: 1.2em;">{{ product.promoted }}</span>
-    </p>
-    <a href="#" target="_blank"><img src="http://placehold.it/300x150" style="margin-left: 0;"></a>
-  </div>
-  <p class="panel-footer" style="margin-bottom: 0;">{{ product.description }}</p>
-</div>
-</section>
+
+<app-product-list></app-product-list>
