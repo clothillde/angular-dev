@@ -52,6 +52,16 @@ public products: Object[] = [
     promoted: true}
   ]
 
+ public onChange(value){
+   this.products = this.products.filter((element) => {
+      const string = element['name'] + element['price'] + element['description'];
+        return string.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+    });
+     /*this.products = this.products.filter((element) => { 
+       return (element)['name'].indexOf(value.toLowerCase()) !== -1 || (element)['price'].indexOf(value.toLowerCase()) !== -1 || (element)['description'].indexOf(value.toLowerCase()) !== -1
+      });*/
+ }
+   
   ngOnInit() {
   }
 
