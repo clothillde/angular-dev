@@ -3,7 +3,7 @@
   <div class="panel-body list-group" style="padding: 0;">
     <p  class="list-group-item" >
       <span >{{ product.price | currency }}</span>
-      <span class="badge" style="background-color: red;" *ngIf="product.promoted">promotion</span>
+      <span class="badge" style="background-color: red;" *ngIf="product.promoted">{{ promotion }}</span>
     </p>
     <a href="#" target="_blank"><img src="http://placehold.it/300x150" style="margin-left: 0;"></a>
   </div>

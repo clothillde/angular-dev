@@ -8,6 +8,8 @@ import { FormControl } from "@angular/forms";
 })
 export class FilterComponent implements OnInit {
 
+  filter: string = 'Filter';
+
   public myInput = new FormControl();
 
   @Output() public onchange = new EventEmitter();
