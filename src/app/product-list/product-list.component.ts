@@ -7,7 +7,9 @@ import { ProductsRepository } from './products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+
  public products: Object[] = [];
+ public filterUp: boolean = true;
 
   constructor(productsRepository: ProductsRepository) { 
     this.products = productsRepository.getProducts();
@@ -22,7 +24,11 @@ export class ProductListComponent implements OnInit {
        return (element)['name'].indexOf(value.toLowerCase()) !== -1 || (element)['price'].indexOf(value.toLowerCase()) !== -1 || (element)['description'].indexOf(value.toLowerCase()) !== -1
       });*/
  }
-   
+
+ public toggleText(){
+    this.filterUp = !this.filterUp;
+ }
+
   ngOnInit() {
   }
 

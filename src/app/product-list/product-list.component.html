@@ -1,6 +1,7 @@
 
 <section style="width: 1600px; margin: 0 auto;">
   <app-filter (onchange)="onChange($event)"></app-filter>
+  <button type="button" class="btn btn-default" style="position: absolute; left: 54px; top: 69px;" (click)="toggleText()">{{filterUp ? 'Filter Up' : 'Filter Down'}}</button>
   <app-product class="panel panel-default" style="width: 300px; float: left; margin: 20px 10px;" *ngFor="let product of products" [product]="product">
   </app-product>
 </section>
