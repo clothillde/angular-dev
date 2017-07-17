@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from "@angular/forms";
+/* import { IProduct } from './product-list/products'; */
 
 @Component({
   selector: 'app-filter',
@@ -14,6 +15,7 @@ export class FilterComponent implements OnInit {
 
   @Output() public onchange = new EventEmitter();
 
+/*   public products: IProduct[]; */
   public products: Object[];
 
   constructor() { 
