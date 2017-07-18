@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ProductsRepository } from './products';
+import { ProductsRepository, IProduct } from './products';
 
 @Component({
   selector: 'app-product-list',
@@ -7,7 +7,9 @@ import { ProductsRepository } from './products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
- public products: Object[] = [];
+
+ public products: IProduct[] = [];
+ public filterUp: boolean = true;
 
   constructor(@Inject(ProductsRepository) private productsRepository: ProductsRepository) { 
   }
@@ -22,10 +24,14 @@ export class ProductListComponent implements OnInit {
         return string.toLowerCase().indexOf(value.toLowerCase()) !== -1;
     });*/
      /*this.products = this.products.filter((element) => { 
-       return (element)['name'].indexOf(value.toLowerCase()) !== -1 || (element)['price'].indexOf(value.toLowerCase()) !== -1 || (element)['description'].indexOf(value.toLowerCase()) !== -1
+       return element.name.indexOf(value.toLowerCase()) !== -1 || element.price.indexOf(value.toLowerCase()) !== -1 || element.description.indexOf(value.toLowerCase()) !== -1
       });*/
  }
-   
+
+ public toggleText(): void {
+    this.filterUp = !this.filterUp;
+ }
+
   ngOnInit() {
     this.products = this.productsRepository.getProducts();
   }

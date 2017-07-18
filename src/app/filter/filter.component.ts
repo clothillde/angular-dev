@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from "@angular/forms";
+/* import { IProduct } from './product-list/products'; */
 
 @Component({
   selector: 'app-filter',
@@ -7,6 +8,8 @@ import { FormControl } from "@angular/forms";
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
+
+  filter: string = 'Filter';
 
   public myInput = new FormControl();
 
