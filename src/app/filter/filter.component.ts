@@ -12,8 +12,6 @@ export class FilterComponent implements OnInit {
 
   @Output() public onchange = new EventEmitter();
 
-  public products: Object[];
-
   constructor() { 
     this.myInput.valueChanges.subscribe((value) => {this.onchange.next(value)});
    }
