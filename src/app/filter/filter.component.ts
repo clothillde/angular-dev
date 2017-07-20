@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from "@angular/forms";
-/* import { IProduct } from './product-list/products'; */
 
 @Component({
   selector: 'app-filter',
@@ -10,7 +9,7 @@ import { FormControl } from "@angular/forms";
 export class FilterComponent implements OnInit {
 
   public search: string = 'Search';
-  public filterUp: boolean = true;
+  public filter: boolean = true;
 
   public myInput = new FormControl();
 
@@ -21,13 +20,13 @@ export class FilterComponent implements OnInit {
     this.myInput.valueChanges.subscribe((value) => {this.onchange.emit(value)});
    }
 
-   public onClick(button) {
+  public onClick(button) {
     this.toggleprices.emit(button);
   } 
 
- public toggleText(): void {
-    this.filterUp = !this.filterUp;
- }
+  public toggleText(): void {
+    this.filter = !this.filter;
+  }
 
   ngOnInit() {
   }

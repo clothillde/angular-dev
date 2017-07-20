@@ -23,10 +23,17 @@ export class ProductListComponent implements OnInit {
       });*/
  }
 
- public onClickUp(){
-   this.products = this.products.sort((a, b) => {
+ public onClickUp(filter){
+   if(filter){
+    this.products = this.products.sort((a, b) => {
       return a.price - b.price;
    }) 
+   }
+  else {
+    this.products = this.products.sort((a, b) => {
+      return b.price - a.price;
+   })
+  }  
  }
 
   ngOnInit() {

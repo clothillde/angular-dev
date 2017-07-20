@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-default" style="margin-bottom: -50px; margin-left: 10px;" #button (click)="onClick(button)" (click)="toggleText($event)">{{filterUp ? 'Filter Up' : 'Filter Down'}}</button>
+<button type="button" class="btn btn-default" style="margin-bottom: -50px; margin-left: 10px;" #button (click)="onClick(filter)" (click)="toggleText($event)">{{filter ? 'Filter Up' : 'Filter Down'}}</button>
 <div class="input-group" style="width: 520px; margin-left: 110px;">
   <span class="input-group-addon" style="padding: 0 30px;">{{ search }}</span>
   <input type="text" class="form-control" [formControl]="myInput">
