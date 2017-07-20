@@ -9,27 +9,24 @@ import { ProductsRepository, IProduct } from './products';
 export class ProductListComponent implements OnInit {
 
  public products: IProduct[] = [];
- public filterUp: boolean = true;
 
   constructor(@Inject(ProductsRepository) private productsRepository: ProductsRepository) { 
   }
 
  public onChange(value){
    this.products = this.productsRepository.getProducts().filter((element) => {
-      const string = element['name'] + element['price'] + element['description'];
+      const string = element.name + element.price + element.description;
         return string.toLowerCase().indexOf(value.toLowerCase()) !== -1;
     });
-   /*this.products = this.products.filter((element) => {
-      const string = element['name'] + element['price'] + element['description'];
-        return string.toLowerCase().indexOf(value.toLowerCase()) !== -1;
-    });*/
      /*this.products = this.products.filter((element) => { 
        return element.name.indexOf(value.toLowerCase()) !== -1 || element.price.indexOf(value.toLowerCase()) !== -1 || element.description.indexOf(value.toLowerCase()) !== -1
       });*/
  }
 
- public toggleText(): void {
-    this.filterUp = !this.filterUp;
+ public onClickUp(){
+   this.products = this.products.sort((a, b) => {
+      return a.price - b.price;
+   }) 
  }
 
   ngOnInit() {

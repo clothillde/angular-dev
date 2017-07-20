@@ -9,15 +9,25 @@ import { FormControl } from "@angular/forms";
 })
 export class FilterComponent implements OnInit {
 
-  filter: string = 'Filter';
+  public search: string = 'Search';
+  public filterUp: boolean = true;
 
   public myInput = new FormControl();
 
-  @Output() public onchange = new EventEmitter();
+  @Output() public onchange : EventEmitter<{}> = new EventEmitter();
+  @Output() public toggleprices : EventEmitter<{}>= new EventEmitter();
 
   constructor() { 
-    this.myInput.valueChanges.subscribe((value) => {this.onchange.next(value)});
+    this.myInput.valueChanges.subscribe((value) => {this.onchange.emit(value)});
    }
+
+   public onClick(button) {
+    this.toggleprices.emit(button);
+  } 
+
+ public toggleText(): void {
+    this.filterUp = !this.filterUp;
+ }
 
   ngOnInit() {
   }
