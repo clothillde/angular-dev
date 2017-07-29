@@ -1,10 +1,11 @@
 
-  <h2 class="panel-heading" style="margin-top: 0; color: teal;">{{ product.name | uppercase }}</h2>
+  <h2 class="panel-heading" style="margin-top: 0; color: teal; height: 140px; overflow: hidden;">{{ product.name | uppercase }}</h2>
   <div class="panel-body list-group" style="padding: 0;">
     <p  class="list-group-item" >
-       <span >{{ product.price | currency }}</span> 
+       <span style="font-size: 1.5em; display: block; text-align: center;">{{ product.price | currency }}</span> 
        <span class="badge" style="background-color: red;" *ngIf="product.promoted">{{ promotion }}</span> 
     </p>
-    <a href="#" target="_blank"><img src="{{product.imageUrl}}" style="margin-left: 0; height: 250px; width: 300px;"></a>
+    <a href="#" target="_blank"><img src="{{product.imageUrl}}" style="margin-left: 0; height: 200px; width: 300px;"></a>
   </div>
+  
 <!-- <p class="panel-footer" style="margin-bottom: 0;">{{ product.description }}</p> -->
