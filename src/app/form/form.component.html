@@ -1,0 +1,23 @@
+ <div>
+    <form [formGroup]="productForm">
+        <label>
+            <input type="text" placeholder="Name" [formControlName]="'name'" />
+        </label>
+          <label>
+            <input type="text" placeholder="Surname" [formControlName]="'surname'" />
+        </label>
+          <label>
+            <input type="text" placeholder="E-mail" [formControlName]="'e-mail'" />
+        </label>
+          <label>
+            <input type="text" placeholder="Address" [formControlName]="'address'" />
+        </label>
+          <label>
+            <input type="text" placeholder="Product" [formControlName]="'product'" />
+        </label>
+        <label>
+            <input type="text" placeholder="Products count" [formControlName]="'products count'" />
+        </label>
+        <button type="submit" (click)="onSubmit()">Submit</button>
+    </form>
+</div>

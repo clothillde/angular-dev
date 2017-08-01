@@ -10,13 +10,15 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { FilterComponent } from './filter/filter.component';
 import { ProductsRepository } from './product-list/products';
 import { ProductsHttpRepository } from './product-list/products-http';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ProductListComponent,
-    FilterComponent
+    FilterComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
