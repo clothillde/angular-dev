@@ -26,7 +26,7 @@ export class ProductListComponent implements OnInit {
       });*/
  }
 
- /* public onClickUp(filter){
+  public onClickUp(filter){
    if(filter){
     this.products = this.products.sort((a, b) => {
       return a.price - b.price;
@@ -37,7 +37,7 @@ export class ProductListComponent implements OnInit {
       return b.price - a.price;
    })
   }  
- } */
+ } 
 
   ngOnInit() {
      /*    this.products = this.productsRepository.getProducts(); */
