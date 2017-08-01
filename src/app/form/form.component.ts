@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -11,12 +11,12 @@ export class FormComponent implements OnInit {
 
   constructor(fb: FormBuilder) { 
     this.productForm = fb.group({
-      name: [''],
-      surname: [''],
-      email: [''],
-      address: [''],
-      product: [''],
-      productscount: ['']
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+      email: ['', Validators.required],
+      address: ['', Validators.required],
+      product: ['', Validators.required],
+      productscount: ['', Validators.required]
     });
    }
 
