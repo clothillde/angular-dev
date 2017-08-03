@@ -9,7 +9,8 @@ import { ProductsHttpRepository, IProduct } from './products-http';
 })
 export class ProductListComponent implements OnInit {
 
-  public products: IProduct[] = [];
+  public visibleProducts: IProduct[] = [];
+  private _allProducts: IProduct[] = [];
 
   /* constructor(@Inject(ProductsRepository) private productsRepository: ProductsRepository) { 
   } */
@@ -17,8 +18,8 @@ export class ProductListComponent implements OnInit {
   }
 
  public onChange(value){
-   this.products = this.products.filter((element) => {
-     return element.name.indexOf(value.toLowerCase()) !== -1;
+   this.visibleProducts = this._allProducts.filter((element) => {
+     return element.name.toLowerCase().indexOf(value.toLowerCase()) !== -1;
    });
 /*       this.products = this.productsHttpRepository.getProducts().filter((element) => {
       const string = element.name + element.price + element.description;
@@ -28,12 +29,12 @@ export class ProductListComponent implements OnInit {
 
   public onClickUp(filter){
    if(filter){
-    this.products = this.products.sort((a, b) => {
+    this.visibleProducts = this.visibleProducts.sort((a, b) => {
       return a.price - b.price;
    }) 
    }
   else {
-    this.products = this.products.sort((a, b) => {
+    this.visibleProducts = this.visibleProducts.sort((a, b) => {
       return b.price - a.price;
    })
   }  
@@ -41,7 +42,10 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
      /*    this.products = this.productsRepository.getProducts(); */
-      this.productsHttpRepository.getProducts().subscribe(products => this.products = products);  
+      this.productsHttpRepository.getProducts().subscribe(products => { 
+        this._allProducts = products; 
+        this.visibleProducts = products 
+      });  
     }
 
   getName = (product: any) => product.name;
