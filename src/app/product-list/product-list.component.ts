@@ -8,6 +8,7 @@ import { ProductsHttpRepository, IProduct } from './products-http';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  errorMessage: string;
 
   public visibleProducts: IProduct[] = [];
   private _allProducts: IProduct[] = [];
@@ -45,7 +46,8 @@ export class ProductListComponent implements OnInit {
       this.productsHttpRepository.getProducts().subscribe(products => { 
         this._allProducts = products; 
         this.visibleProducts = products 
-      });  
+      },
+        error => this.errorMessage = <any>error);  
     }
 
   getName = (product: any) => product.name;

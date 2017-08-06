@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { FilterComponent } from './filter/filter.component';
@@ -18,7 +19,8 @@ import { FormComponent } from './form/form.component';
     ProductComponent,
     ProductListComponent,
     FilterComponent,
-    FormComponent
+    FormComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
