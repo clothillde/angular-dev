@@ -13,10 +13,13 @@ export class FormComponent implements OnInit {
     this.productForm = fb.group({
       name: ['', Validators.required],
       surname: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', Validators.compose([
+            Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)])],
       address: ['', Validators.required],
       product: ['', Validators.required],
-      productscount: ['', Validators.required]
+      productscount: ['', Validators.compose([
+            Validators.required, Validators.pattern(/^[0-9]*$/)]
+          )]
     });
    }
 

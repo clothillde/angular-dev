@@ -1,6 +1,5 @@
 import { Component, Injectable } from '@angular/core';
 import { Http } from "@angular/http";
-import _ from "lodash";
 
 import "rxjs/add/operator/map";
 
