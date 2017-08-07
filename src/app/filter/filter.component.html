@@ -1,5 +1,8 @@
-<button type="button" class="btn btn-default" style="margin-bottom: -50px; margin-left: 10px;" #button (click)="onClick(filter)" (click)="toggleText($event)">{{filter ? 'Filter Up Prices' : 'Filter Down Prices'}}</button>
-<div class="input-group" style="width: 520px; margin-left: 190px;">
+<button type="button" class="btn btn-default" style="margin-bottom: -51px; margin-left: 10px;" #button (click)="onClick(filter)" (click)="toggleText($event)">
+  Filter Prices
+  <span class="glyphicon" [ngClass]="filter ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down'" style="padding-left: 8px;"></span>
+</button>
+<div class="input-group" style="width: 520px; margin-left: 170px;">
   <span class="input-group-addon" style="padding: 0 30px;">{{ search }}</span>
   <input type="text" class="form-control" [formControl]="myInput">
 </div>
